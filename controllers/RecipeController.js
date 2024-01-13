@@ -19,7 +19,7 @@ export const getLastTags = async (req, res) => {
   }
 };
 
-//получение всех рецептов
+// получение всех рецептов
 export const getAll = async (req, res) => {
   try {
     const recipes = await RecipeModel.find().populate('user').exec();
