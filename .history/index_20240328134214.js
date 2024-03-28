@@ -4,8 +4,6 @@ import multer from 'multer'; //библиотека для загрузки фа
 import cors from 'cors'; //для доступа к запросам на бэкенд от фронтенда
 
 import mongoose from 'mongoose'; //позволяет работать с бд монгодб
-import dotenv from 'dotenv';
-dotenv.config();
 
 import {
   registerValidation,
@@ -243,8 +241,7 @@ app.patch(
 app.delete('/products/:productId', checkAuth, checkAdmin, ProductController.deleteProduct); //удаление продукта
 
 //по этой команде запускаем сервер
-const PORT = process.env.PORT || 4445;
-app.listen(PORT, (err) => {
+app.listen(4445, (err) => {
   //если сервер не смог запуститься, то возвращаем сообщение об этом
   if (err) {
     return console.log(err);
